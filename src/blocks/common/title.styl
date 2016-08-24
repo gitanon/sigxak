@@ -1,0 +1,25 @@
+.title
+  color $violet
+  font-family $sans-serif_2
+  font-size 48px
+  font-weight 600
+  margin-bottom 30px
+  position relative
+  text-align center
+  text-transform uppercase
+
+.title::after,
+.title:after
+  bottom -30px
+  content "···"
+  left 50%
+  margin-left -24px
+  position absolute
+
+@media (min-width: $screen)
+  .title
+    margin-bottom 50px
+
+@media (min-width: $screen_large)
+  .title
+    margin-bottom 70px

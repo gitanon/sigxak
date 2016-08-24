@@ -1,0 +1,129 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$sprite_service__icon_customize_name = 'sprite_service__icon_customize';
+$sprite_service__icon_customize_x = 121px;
+$sprite_service__icon_customize_y = 0px;
+$sprite_service__icon_customize_offset_x = -121px;
+$sprite_service__icon_customize_offset_y = 0px;
+$sprite_service__icon_customize_width = 63px;
+$sprite_service__icon_customize_height = 45px;
+$sprite_service__icon_customize_total_width = 184px;
+$sprite_service__icon_customize_total_height = 118px;
+$sprite_service__icon_customize_image = '../img/sprite.png';
+$sprite_service__icon_customize = 121px 0px -121px 0px 63px 45px 184px 118px '../img/sprite.png' 'sprite_service__icon_customize';
+$sprite_service__icon_dragdrop_name = 'sprite_service__icon_dragdrop';
+$sprite_service__icon_dragdrop_x = 66px;
+$sprite_service__icon_dragdrop_y = 0px;
+$sprite_service__icon_dragdrop_offset_x = -66px;
+$sprite_service__icon_dragdrop_offset_y = 0px;
+$sprite_service__icon_dragdrop_width = 55px;
+$sprite_service__icon_dragdrop_height = 57px;
+$sprite_service__icon_dragdrop_total_width = 184px;
+$sprite_service__icon_dragdrop_total_height = 118px;
+$sprite_service__icon_dragdrop_image = '../img/sprite.png';
+$sprite_service__icon_dragdrop = 66px 0px -66px 0px 55px 57px 184px 118px '../img/sprite.png' 'sprite_service__icon_dragdrop';
+$sprite_service__icon_responsive_name = 'sprite_service__icon_responsive';
+$sprite_service__icon_responsive_x = 0px;
+$sprite_service__icon_responsive_y = 0px;
+$sprite_service__icon_responsive_offset_x = 0px;
+$sprite_service__icon_responsive_offset_y = 0px;
+$sprite_service__icon_responsive_width = 66px;
+$sprite_service__icon_responsive_height = 57px;
+$sprite_service__icon_responsive_total_width = 184px;
+$sprite_service__icon_responsive_total_height = 118px;
+$sprite_service__icon_responsive_image = '../img/sprite.png';
+$sprite_service__icon_responsive = 0px 0px 0px 0px 66px 57px 184px 118px '../img/sprite.png' 'sprite_service__icon_responsive';
+$sprite_service__icon_setup_name = 'sprite_service__icon_setup';
+$sprite_service__icon_setup_x = 0px;
+$sprite_service__icon_setup_y = 57px;
+$sprite_service__icon_setup_offset_x = 0px;
+$sprite_service__icon_setup_offset_y = -57px;
+$sprite_service__icon_setup_width = 61px;
+$sprite_service__icon_setup_height = 61px;
+$sprite_service__icon_setup_total_width = 184px;
+$sprite_service__icon_setup_total_height = 118px;
+$sprite_service__icon_setup_image = '../img/sprite.png';
+$sprite_service__icon_setup = 0px 57px 0px -57px 61px 61px 184px 118px '../img/sprite.png' 'sprite_service__icon_setup';
+$spritesheet_width = 184px;
+$spritesheet_height = 118px;
+$spritesheet_image = '../img/sprite.png';
+$spritesheet_sprites = $sprite_service__icon_customize $sprite_service__icon_dragdrop $sprite_service__icon_responsive $sprite_service__icon_setup;
+$spritesheet = 184px 118px '../img/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}
