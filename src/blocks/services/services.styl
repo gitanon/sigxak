@@ -1,0 +1,63 @@
+.services
+  background $white
+  padding-top 30px
+  padding-bottom 15px
+
+.services_wrap
+  display flex
+  flex-flow row wrap
+  justify-content space-between
+
+.service
+  margin-bottom 35px
+  width 100%
+
+.service__icon
+  align-items center
+  background $green
+  display flex
+  height 114px
+  justify-content center
+  line-height 114px
+  text-align center
+  width 114px
+
+.service__title
+  color $violet
+  font-family $sans-serif_2
+  font-size 36px
+  font-weight 400
+  margin 10px 0
+
+.service__description
+  color #333
+  font-family $sans-serif_1
+  font-size 14px
+  font-weight 400
+
+.service__icon_responsive
+  sprite($sprite_service__icon_responsive)
+.service__icon_customize
+  sprite($sprite_service__icon_customize)
+.service__icon_dragdrop
+  sprite($sprite_service__icon_dragdrop)
+.service__icon_setup
+  sprite($sprite_service__icon_setup)
+
+@media (min-width: $tablet)
+  .service
+    width 45%
+
+@media (min-width: $screen)
+  .services
+    padding-top 60px
+    padding-bottom 25px
+
+@media (min-width: $screen_large)
+  .services
+    padding-top 120px
+    padding-bottom 50px
+
+  .service
+    margin-bottom 70px
+    width 650px
