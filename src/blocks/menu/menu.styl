@@ -1,0 +1,25 @@
+.menu
+  background $green
+  padding 10px 0
+
+.menu__list
+  align-items center
+  display none
+  flex-flow column nowrap
+
+.menu__list_expand
+  display flex
+
+.menu__item
+  color $grey
+  font-family $sans-serif_2
+  font-size 18px
+  font-weight 400
+  margin 10px 0
+  text-transform uppercase
+
+@media (min-width: $tablet)
+  .menu__list
+    display flex
+    flex-flow row wrap
+    justify-content center

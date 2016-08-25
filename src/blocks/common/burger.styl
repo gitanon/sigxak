@@ -1,0 +1,35 @@
+.burger
+  background none
+  border 0
+  border-bottom 4px solid white
+  cursor pointer
+  outline 0
+  padding 0
+  width 28px
+
+.burger:before
+  border-bottom 4px solid white
+  content ""
+  display block
+  margin-bottom 5px
+  width 100%
+
+.burger:after
+  border-bottom 4px solid white
+  content ""
+  display block
+  margin-bottom 5px
+  width 100%
+
+.burger.open
+  border-bottom 4px solid transparent
+
+.burger.open:before
+  transform rotate(-405deg) translateY(1px) translateX(-3px)
+
+.burger.open:after
+  transform rotate(405deg) translateY(-4px) translateX(-5px)
+
+@media (min-width: $tablet)
+  .burger
+    display none

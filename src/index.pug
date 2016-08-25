@@ -5,6 +5,15 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=Edge")
     title Document
     link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Signika:400,600,700" rel="stylesheet")
+    link(href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet")
     link(rel="stylesheet", href="css/main.css")
   body.page
     include blocks/header/header.pug
+    include blocks/menu/menu.pug
+    include blocks/services/services.pug
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+    script.
+      $('.burger').click(function(){
+        $('.menu__list').toggleClass('menu__list_expand');
+        $(this).toggleClass('open');
+      });
