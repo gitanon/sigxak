@@ -1,0 +1,79 @@
+.blog
+  background $light-green
+  padding-top 30px
+  padding-bottom 15px
+
+.blog_wrap
+  display flex
+  flex-flow row wrap
+  justify-content flex-start
+
+.post
+  background $white
+  display flex
+  flex-flow column nowrap
+  margin-bottom 35px
+
+.post__image
+  margin-bottom 25px
+  width 100%
+
+.post__category
+  color $green
+  font-family $sans-serif_1
+  font-size 17px
+  font-weight 400
+  margin 0 25px 25px 25px
+
+.post__title
+  color $black
+  font-family $sans-serif_2
+  font-size 29px
+  font-weight 400
+  margin 0 25px 25px 25px
+
+.post__description
+  color $black
+  font-family $sans-serif_1
+  font-size 17px
+  font-weight 400
+  margin 0 25px 25px 25px
+
+@media (min-width: $tablet) 
+  .post
+    margin-right 5%
+    width 47%
+  
+  .post:nth-child(2n)
+    margin-right 0
+
+@media (min-width: $screen)
+  .blog
+    padding-top 60px
+    padding-bottom 100px
+  
+  .post
+    margin-right 5%
+    width 30%
+  
+  .post:nth-child(2n)
+    margin-right 5%
+  
+  .post:nth-child(3n)
+    margin-right 0
+
+@media (min-width: $screen_large)
+  .blog
+    padding-top 120px
+    padding-bottom 200px
+  
+  .post
+    margin-right 35px
+    max-width 322px
+
+  .post:nth-child(2n),
+  .post:nth-child(3n)
+    margin-right 35px
+  
+  .post:nth-child(4n)
+    margin-right 0
