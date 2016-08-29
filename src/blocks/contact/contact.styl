@@ -1,0 +1,84 @@
+.contact
+  background $white
+
+.contact_wrap
+  align-items center
+  display flex
+  flex-flow column wrap
+  padding 25px 0
+
+.map iframe
+  height 200px
+
+.form
+  display flex
+  flex-flow row wrap
+  justify-content space-around
+
+.form_wrap
+  display flex
+  flex-flow column wrap
+
+.form__item
+  background $violet
+  border none
+  border-radius 9px
+  color $white
+  font-family $sans-serif_1
+  font-size 18px
+  font-weight 300
+  margin-bottom 30px
+
+.form__input,
+.form__textarea
+  padding 24px 30px
+  width 240px
+
+.form__button
+  cursor pointer
+  font-size 20px
+  font-weight 600
+  padding 8px 32px
+  text-transform uppercase
+ 
+@media (min-width: $tablet)
+  .map iframe
+    height 300px
+
+  .form__item
+    margin-bottom 10px
+
+  .form__input,
+  .form__textarea
+    width 220px
+
+@media (min-width: $screen)
+  .map iframe
+    height 400px
+
+  .form
+    width 960px
+
+  .form__input,
+  .form__textarea
+    width 350px
+
+  .form__item
+    margin-bottom 30px
+
+  .contact_wrap
+    padding 50px 0
+
+@media (min-width: $screen_large)
+  .map iframe
+    height 500px
+
+  .form
+    width 1260px
+  
+  .form__input,
+  .form__textarea
+    width 500px
+  
+  .contact_wrap
+    padding 100px 0
