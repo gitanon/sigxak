@@ -1,0 +1,84 @@
+.portfolio
+  background $light-green
+
+.portfolio__list
+  display flex
+  flex-flow row wrap
+  justify-content center
+  padding-bottom 80px
+
+.portfolio__works
+  display flex
+  flex-flow row wrap
+
+.portfolio__item
+  height 318px
+  width 100%
+
+.portfolio__item:hover
+  cursor pointer
+
+.portfolio__item_wrap
+  position relative
+
+.portfolio__img
+  height 318px
+  width 100%
+
+.portfolio__title,
+.portfolio__category
+  display none
+  left 50%
+  margin-left -208px
+  position absolute
+  text-align center
+  width 100%
+
+.portfolio__title
+  color $white
+  font-family $sans-serif_2
+  font-size 30px
+  font-weight 700
+  text-transform uppercase
+  top 100px
+
+.portfolio__category
+  color $white
+  font-family $sans-serif_1
+  font-size 18px
+  font-weight 600
+  line-height 318px
+  text-transform uppercase
+  top 0
+
+.portfolio__icon
+  sprite($sprite_portfolio_icon)
+  bottom 80px
+  display none
+  left 50%
+  margin-left -21px
+  position absolute
+
+.portfolio__item:hover .portfolio__title,
+.portfolio__item:hover .portfolio__category,
+.portfolio__item:hover .portfolio__icon
+  display block
+
+.portfolio__item:hover .portfolio__title
+  z-index 10
+
+.portfolio__item:hover .portfolio__category
+  background rgba($green, 0.75)
+
+
+@media (min-width: $tablet)
+  .portfolio__item
+    width 50%
+
+@media (min-width: $screen)
+  .portfolio__item
+    width 33.33%
+
+@media (min-width: $screen_large)
+  .portfolio__item
+    width 25%

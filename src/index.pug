@@ -10,17 +10,42 @@ html(lang="en")
   body.page
     include blocks/header/header.pug
     include blocks/menu/menu.pug
+    include blocks/portfolio/portfolio.pug
     include blocks/services/services.pug
     include blocks/blog/blog.pug
     include blocks/contact/contact.pug
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+    script(src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js")
     script.
       $('.burger').click(function(){
         $('.menu__list').toggleClass('menu__list_expand');
         $(this).toggleClass('open');
       });
     script.
-      $('.link').on('click', function(e){
+      $('.link_menu').on('click', function(e){
         $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top }, 1000);
         e.preventDefault();
-      }); 
+      });
+    script.
+      // init Isotope
+      var $grid = $('.portfolio__works').isotope({
+        itemSelector: '.portfolio__item',
+        layoutMode: 'fitRows',
+        filter: '*'
+      });
+      // bind filter button click
+      $('.portfolio__list').on( 'click', '.link_portfolio', function() {
+        var filterValue = $( this ).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+      });
+      // change is-checked class on buttons
+      $('.portfolio__list').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', '.link_portfolio', function() {
+          $buttonGroup.find('.link_portfolio-is-checked').removeClass('link_portfolio-is-checked');
+          $( this ).addClass('link_portfolio-is-checked');
+        });
+      });
+      $('.link_portfolio').click(function(event){
+        event.preventDefault();
+      });
