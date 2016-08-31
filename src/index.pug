@@ -17,16 +17,6 @@ html(lang="en")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js")
     script(src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js")
     script.
-      $('.burger').click(function(){
-        $('.menu__list').toggleClass('menu__list_expand');
-        $(this).toggleClass('open');
-      });
-    script.
-      $('.link_menu').on('click', function(e){
-        $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top }, 1000);
-        e.preventDefault();
-      });
-    script.
       // init Isotope
       var $grid = $('.portfolio__works').isotope({
         itemSelector: '.portfolio__item',
@@ -48,4 +38,35 @@ html(lang="en")
       });
       $('.link_portfolio').click(function(event){
         event.preventDefault();
+      });
+    script.
+      $(document).ready(function(){
+
+        // Mobile menu
+        $('.burger').click(function(){
+          $('.menu__list').toggleClass('menu__list_expand');
+          $(this).toggleClass('open');
+        });
+        
+        // Check to see if the window is top if not then display button
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 1500) {
+            $('.scroll-to-top').fadeIn();
+          } else {
+            $('.scroll-to-top').fadeOut();
+          }
+        });
+        
+        // Click event to scroll to top
+        $('.scroll-to-top').click(function(){
+          $('html, body').animate({scrollTop : 0},800);
+          return false;
+        });
+
+        // Scroll to menu item
+        $('.link_menu').on('click', function(e){
+          $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top }, 1000);
+          e.preventDefault();
+        });
+        
       });
