@@ -1,0 +1,45 @@
+.footer
+  background $green
+
+.footer_wrap
+  align-items center
+  display flex
+  flex-flow column wrap
+  justify-content space-around
+  padding 100px 0
+
+.footer__list
+  display flex
+  flex-flow column wrap
+  margin-bottom 30px
+
+.footer__item
+  color $white
+  font-family $sans-serif_1
+  font-size 18px
+  font-weight 400
+
+.footer__icon
+  margin-left 10px
+
+.footer__icon:hover img
+  transform scale(0.9)
+  transition all 300ms ease-in
+
+.footer__copyright
+  background $violet
+  color $white
+  font-family $sans-serif_2
+  font-size 14px
+  font-weight 400
+  padding 30px
+  text-align center
+  text-transform uppercase
+
+@media (min-width: $tablet)
+  .footer_wrap
+    flex-flow row wrap
+
+@media (min-width: $screen)
+  .footer__list
+    margin-bottom 0
