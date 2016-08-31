@@ -1,0 +1,104 @@
+.about
+  background $light-green
+  padding-top 30px
+  padding-bottom 15px
+
+.about_wrap
+  align-items center
+  display flex
+  flex-flow column wrap
+  justify-content center
+
+.about__text
+  color $black
+  font-family $sans-serif_1
+  font-size 14px
+  font-weight 400
+  margin 0 5%
+  margin-bottom 50px
+  width 90%
+
+.mate
+  color $black
+  display flex
+  flex-flow column nowrap
+  font-family $sans-serif_2
+  font-weight 400
+  text-align center
+  max-width 270px
+
+.mate__photo
+  margin-bottom 25px
+
+.mate__name
+  display inline-block
+  font-size 18px
+  margin-bottom 25px
+
+.mate__name_slashes
+  padding 0 10px
+
+.mate__role
+  font-size 16px
+  margin-bottom 25px
+
+.mate__description
+  color $light-green
+  margin-bottom 25px
+  font-family $sans-serif_1
+  font-size 12px
+  padding 0 25px
+
+.mate__social
+  color $light-green
+  display flex
+  flex-flow row nowrap
+  justify-content center
+  margin-bottom 25px
+
+.mate:hover
+  background $green
+  color $white
+  transition all 200ms ease-in
+
+.mate:hover .mate__description,
+.mate:hover .mate__social
+  transition all 100ms ease-in
+
+
+@media (min-width: $tablet)
+  .about_wrap
+    flex-flow row wrap
+
+  .mate
+    margin-right 5%
+
+@media (min-width: $screen)
+  .about
+    padding-top 60px
+    padding-bottom 50px
+  
+  .about__text
+    width 40%
+  
+  .mate
+    margin-right 1%
+
+@media (min-width: $screen_large)
+  .about
+    padding-top 120px
+    padding-bottom 50px
+  
+  .about__text
+    margin-bottom 100px
+    width 40%
+
+  .mate
+    margin-right 105px
+    max-width 270px
+  
+  .mate:nth-child(2n)
+    margin-right 105px
+
+  .mate:nth-child(4n)
+    margin-right 0px
